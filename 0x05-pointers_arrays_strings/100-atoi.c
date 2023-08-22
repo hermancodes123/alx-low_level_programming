@@ -1,19 +1,39 @@
+#include "main.h"
+
 /**
 * _atoi - changes a string to an int
 * @s: the string to be changed
 *
 * Return: the converted int
 */
+
 int _atoi(char *s)
+
 {
-int i = 1;
+
+int c = 0;
 unsigned int num = 0;
-do {
-if (*s == '-')
-i *= -1;
-else if (*s >= '0' && *s <= '9')
-num = num * 10 + (*s - '0');
-else if (num > 0)
+int min = 1;
+int isi = 0;
+
+while (s[c])
+{
+if ([s] == 45)
+{
+min *= -1;
+}
+while (s[c] >= 48 && s[c] <= 57)
+{
+isi = 1;
+num = (num * 10) + (s[c] - '0');
+c++;
+}
+if (isi == 1)
+{
 break;
-} while (*s++);
-return (num *i);
+}
+c++;
+}
+num *= min;
+return (num);
+}
